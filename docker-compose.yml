@@ -15,7 +15,7 @@ services:
     image: google/cadvisor:latest
     container_name: cadvisor
     ports:
-    - 8080:8080
+    - 8081:8080
     volumes:
     - /:/rootfs:ro
     - /var/run:/var/run:rw
@@ -28,4 +28,13 @@ services:
     container_name: redis
     ports:
     - 6379:6379
-
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=${ADMIN_USER:-admin}
+      - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin}
+      - GF_USERS_ALLOW_SIGN_UP=false
+    restart: unless-stopped
+    ports:
+      - 3000:3000
