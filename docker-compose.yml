@@ -28,4 +28,11 @@ services:
     container_name: redis
     ports:
     - 6379:6379
-
+  production_grafana:
+    restart: unless-stopped
+    image: grafana/grafana:5.1.0
+    container_name: production_grafana
+    ports:
+    - 3000:3000
+    user: "104"
+    restart: always
