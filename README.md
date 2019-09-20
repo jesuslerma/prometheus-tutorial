@@ -18,7 +18,7 @@ exit
 
 vagrant ssh prometheus
 cd prometheus
-vim prometheus.yml
+./prometheus &
 exit
 ```
 
