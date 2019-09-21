@@ -125,3 +125,32 @@ Visualization Config:
   Stacking & Null value:
     Stack: off
     Null value: null
+
+
+## Python Client
+In one vagrant machine called python we need to install
+```bash
+sudo apt-get install python3-pip
+sudo bash -c 'cat << EOF >> /etc/environment
+LC_ALL="en_US.UTF-8"
+LC_CTYPE="en_US.UTF-8"
+EOF'
+pip3 install prometheus_client
+```
+
+We need to create a file called server.py
+```python
+import http.server
+from prometheus_client import start_http_server
+
+class MyHandler(http.server.BaseHTTPRequestHandler):
+        def do_GET(self):
+                self.send_response(200)
+                self.end_headers()
+                self.wfile.write(b"Hello World")
+
+if __name__ == "__main__":
+        start_http_server(8000)
+        server = http.server.HTTPServer(('localhost',8001), MyHandler)
+        server.serve_forever()
+```
