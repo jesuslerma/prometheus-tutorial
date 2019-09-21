@@ -237,6 +237,10 @@ Visualization Config:
     unit: bytes
     
     scale: linear
+    
+### Memory usage
+```(1 - (node_memory_MemAvailable_bytes{instance=~\"$node\"} / (node_memory_MemTotal_bytes{instance=~\"$node\"})))* 100```
+Singlestat
 
 
 ## Python Client
