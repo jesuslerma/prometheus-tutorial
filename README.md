@@ -133,8 +133,7 @@ Grafana Panel: Bar Gauge
 PromQL: ```node_filesystem_files_free / node_filesystem_files * 100```
 Query Config: Legend: {{ mountpoint }} Resolution: 1/1 Format: Time series Instant: on
 
-Visualization Config: 
-
+Visualization Config:
   Display:
 
     Show: Calculation
@@ -146,6 +145,7 @@ Visualization Config:
     Mode: Gradient
 
   Field:
+
     Unit: percent(0-100)
 
     Min: 0
