@@ -193,6 +193,10 @@ Visualization Config:
 
     Null value: null
 
+### Memory usage
+```(1 - (node_memory_MemAvailable_bytes{instance=~\"$node\"} / (node_memory_MemTotal_bytes{instance=~\"$node\"})))* 100```
+Singlestat
+
 
 ## Python Client
 In one vagrant machine called python we need to install
