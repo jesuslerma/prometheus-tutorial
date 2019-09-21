@@ -193,6 +193,51 @@ Visualization Config:
 
     Null value: null
 
+  ### Memory Information
+  ```node_memory_MemTotal_bytes```
+
+  Grafana Panel: Graph
+  A
+  
+  PromQL: ```node_memory_MemTotal_bytes```
+
+  Query Config: Legend: {{instance}}_Total memory Resolution: 1/2 Format: Time series Instant: off
+
+  Visualization Config: 
+
+  Display Modes:
+
+    Bars: off
+
+    Lines: on
+
+    Points: off
+
+  Mode Options:
+
+    Fill: 6
+    
+    Fill Gradient: 3
+
+    Line Width: 3
+
+  Hover Tooltip:
+
+    Mode: All series
+
+    Start order: None
+
+  Stacking & Null value:
+
+    Stack: off
+
+    Null value: null
+
+  Left Y:
+    unit: bytes
+    
+    scale: linear
+
 
 ## Python Client
 In one vagrant machine called python we need to install
