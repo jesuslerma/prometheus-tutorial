@@ -33,22 +33,42 @@ And add
 ## DISK
 ### Filesystem tracking
 The overall space remaining on various filesystems.
-node_filesystem_avail_bytes
-node_filesystem_size_bytes
+``node_filesystem_avail_bytes```
+```node_filesystem_size_bytes```
 
 Grafana Panel: Bar Gauge
+
 PromQL: (1 - node_filesystem_avail_bytes / node_filesystem_size_bytes) * 100
-Query Config: Legend: {{ device }} Resolution: 1/1 Format: Time series Instant: on
+Query Config:
+
+  Legend: {{ device }}
+
+  Resolution: 1/1
+
+  Format: Time series 
+
+  Instant: on
+
 Visualization Config: 
+
   Display:
+
     Show: Calculation
+
     Calc: Mean
+
     Orientation: Vertical
+
     Mode: Gradient
+
   Field:
+
     Unit: percent(0-100)
+
     Min: 0
+
     Max: 100
+
 ### Read & Write Latencies
 The read and write latencies on our disks.
 
